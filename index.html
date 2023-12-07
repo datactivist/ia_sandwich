@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>De ChatGPT à Blade Runner : faut-il avoir peur de l’IA ?</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Joël Gombin, Datactivist et opsci.ai" />
+    <script src="libs/header-attrs-2.25/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/datactivist.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/datactivist-fonts.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, orientation=auto"/>
+    <meta name="description" content="IA Sandwich"/>
+    <meta name="github-repo" content="datactivist/ia_sandwich"/>
+    <meta name="twitter:title" content="De ChatGPT à Blade Runner : faut-il avoir peur de l&#39;IA ?"/>
+    <meta name="twitter:description" content="IA Sandwich"/>
+    <meta name="twitter:url" content="https://datactivist.coop/ia_sandwich"/>
+    <meta name="twitter:image" content="https://github.com/datactivist/slides_datactivist/raw/master/inst/rmarkdown/templates/xaringan/resources/img/logo.png"/>
+    <meta name="twitter:image:alt" content="le logo de Datactivist"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:creator" content="@datactivi_st"/>
+    <meta name="twitter:site" content="@datactivi_st"/>
+    <meta property="og:title" content="De ChatGPT à Blade Runner : faut-il avoir peur de l&#39;IA ?"/>
+    <meta property="og:description" content="IA Sandwich"/>
+    <meta property="og:url" content="https://datactivist.coop/ia_sandwich"/>
+    <meta property="og:image" content="https://github.com/datactivist/slides_datactivist/raw/master/inst/rmarkdown/templates/xaringan/resources/img/logo.png"/>
+    <meta property="og:image:alt" content="le logo de Datactivist"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="fr_FR"/>
+    <meta property="og:site_name" content="Datactivist"/>
+    <meta property="article:author" content="Datactivist"/>
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+layout: true
+
+&lt;style&gt;
+.remark-slide-number {
+  position: inherit;
+}
+
+.remark-slide-number .progress-bar-container {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  display: block;
+  left: 0;
+  right: 0;
+}
+
+.remark-slide-number .progress-bar {
+  height: 100%;
+  background-color: #e95459;
+}
+
+&lt;/style&gt;
+
+
+&lt;div class='my-footer'&gt;&lt;span&gt;IA Sandwich&lt;/span&gt; &lt;center&gt;&lt;div class=logo&gt;&lt;a href='https://datactivist.coop/'&gt;&lt;img src='https://github.com/datactivist/slides_datactivist/raw/master/inst/rmarkdown/templates/xaringan/resources/img/fond_noir_monochrome.png' width='100px'&gt;&lt;/a&gt;&lt;/div&gt;&lt;/center&gt;&lt;/span&gt;&lt;/div&gt; 
+
+---
+class: inverse, center, middle
+background-image: url(./img/napo.png)
+
+## De ChatGPT à Blade Runner :&lt;/BR&gt;faut-il avoir peur de l'IA ?
+
+### Joël Gombin (Datactivist et opsci.ai)
+
+---
+
+class: center, middle
+
+Ces slides en ligne : http://datactivist.coop/ia_sandwich
+
+Sources : https://github.com/datactivist/ia_sandwich
+
+
+Les productions de Datactivist sont librement réutilisables selon les termes de la licence [Creative Commons 4.0 BY-SA](https://creativecommons.org/licenses/by-sa/4.0/legalcode.fr).
+
+&lt;BR&gt;
+&lt;BR&gt;
+
+![](https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png)
+
+---
+class: inverse, center, middle
+
+# Qui a déjà utilisé ChatGPT ou un autre outil d'IA ?
+
+---
+## Testons ensemble
+
+Allez sur [bing.com](bing.com) et utilisez la conversation (contrairement à ChatGPT, il ne nécessite pas d'inscription). 
+
+Posez par exemple la question : "je vais visiter Poitiers, que puis-je y faire ?" ou encore "Ecris une requête Overpass turbo pour récupérer les écoles de Poitiers".
+
+![bing](img/bing.png)
+
+
+---
+
+## Testons ensemble
+
+Allez sur https://huggingface.co/Pclanglais/TintinIA et créez une image de Tintin (en promptant en anglais selon le modèle, par exemple "a drawing of Tintin walking in the streets of Poitiers, near the cathedral").
+
+.center[
+.reduite[
+![](img/tintin.jpg)
+]
+]
+
+---
+class: inverse, center, middle
+
+# Intelligence artificielle : &lt;/BR&gt; de quoi s'agit-il ?
+
+---
+## L'IA, c'est quoi ?
+
+Un **champ de recherche** ancien qui vise à reproduire des fonctions cognitives humaines (raisonnement, perception, apprentissage, etc.) par des machines.
+
+Ce terme d'IA renvoie à un **objectif**, mais ne parle pas des moyens d'y parvenir. Historiquement, des approches très différentes se sont développées (IA symbolique, connexionnisme, etc.).
+
+Dans son usage courant, ce terme est vague et relève souvent du **marketing** (Antonio Casilli parle d' "[IA Potemkine](https://www.casilli.fr/2023/04/08/grand-entretien-pour-le-grand-continent-7-avril-2023/)" pour mettre en évidence le travail humain souvent dissimulé sous les atours de l'IA). 
+
+---
+## L'explosion des données et de la puissance de calcul
+
+[.reduite[.center[![](./img/moore.png)]]](http://visual.ly/infographic-about-computers)
+
+---
+## L'explosion des données et de la puissance de calcul
+
+[.reduite[.center[![](./img/altavista.png)]]](https://tweets.kingkool68.com/tweet/655306196128280576/)
+
+???
+
+1996
+
+---
+## L'explosion des données et de la puissance de calcul
+
+[.reduite[.center[![](./img/snowmobile.png)]]](https://aws.amazon.com/blogs/aws/aws-snowmobile-move-exabytes-of-data-to-the-cloud-in-weeks/)
+
+???
+
+2016
+
+---
+## De la machine à calculer à l'IA
+
+![](./img/pascaline.jpg)
+
+Par [David.Monniaux](https://commons.wikimedia.org/w/index.php?curid=186079), CC BY-SA 3.0
+
+???
+
+Pascaline, 1642
+Les calculs sont inscrits "en dur" dans le matériel
+
+---
+
+## De la machine à calculer à l'IA
+
+.center[
+.reduite[
+![](./img/jacquard.jpg)
+]
+]
+
+Par [David.Monniaux](https://commons.wikimedia.org/w/index.php?curid=186079), CC BY-SA 3.0
+
+???
+
+Métier Jacquard, premier usage des cartes perforées en 1801
+
+---
+
+## De la machine à calculer à l'IA
+
+.center[
+.reduite[
+![](./img/adalovelace.png)
+]
+]
+Par [Antoine Claudet](https://commons.wikimedia.org/wiki/File:Ada_Byron_daguerreotype_by_Antoine_Claudet_1843_or_1850.jpg), CC BY-SA 4.0
+
+??? 
+
+Ada Lovelace, invente la programmation avec la machine analytique de Babbage en 1843
+
+
+
+---
+
+## De la machine à calculer à l'IA
+
+.pull-left[
+![](./img/turing.jpg)
+Alan Turing
+]
+
+.pull-right[
+[![](./img/vonneumann.jpg)](https://commons.wikimedia.org/wiki/File:JohnvonNeumann-LosAlamos.jpg)
+John von Neumann
+]
+
+???
+
+Turing : machine de Turing (modèle théorique de l'ordinateur), construction d'un des premiers ordinateurs. Test de Turing (1950)
+
+von Neumann : architecture de von Neumann (mémoire et processeur), MCMC... 
+
+Les instructions logicielles remplacent les logiques inscrites en dur dans le matériel. le matériel devient très générique et progressivement moins coûteux (loi de Moore)
+
+---
+
+## De la machine à calculer à l'IA
+
+[![](./img/perceptron.jpg)](https://en.wikipedia.org/wiki/Perceptron#/media/File:330-PSA-80-60_(USN_710739)_(20897323365).jpg)
+
+???
+
+Perceptron : algorithme créé en 1943, implémenté en 1957 sur un ordinateur. Réseau de neurones (trois couches) qui permet de résoudre des problèmes de classification linéaire, branché sur une caméra (400px).
+
+---
+
+## De la machine à calculer à l'IA
+
+.center[.reduite[
+[![](./img/lecun.jpg)](https://fr.wikipedia.org/wiki/Yann_Le_Cun)
+]]
+
+???
+
+Yann Le Cun, inventeur des réseaux convolutifs (fin années 1980) qui relancent l'idée des réseaux de neurones
+
+---
+
+## De la machine à calculer à l'IA
+
+.center[.reduite[
+![](./img/word2vec.jpg)
+]]
+
+???
+
+Word2Vec : modèle auto-apprenant, pas besoin d'annotations (Google, 2013). Embeddings : représentation vectorielle des mots (distance sémantique)
+
+
+---
+
+## De la machine à calculer à l'IA
+
+[![](./img/transformer.png)](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)
+
+???
+
+Création de l'architecture Transformer avec le mécanisme d'attention (Google, 2017). Progrès très significatif en matière de traduction, génération de texte... Architecture toujours dominante aujourd'hui.
+BERT est le premier modèle à utiliser cette architecture pour le traitement du langage (Google, 2018). 110 et 340 M de paramètres, entraînés sur Wikipedia en anglais (2,5G mots) et 11000 livres (800M mots). Publié en open source et a été énormément finetuné 
+
+---
+
+## IA générative 
+
+Les modèles aujourd'hui en vogue (GPT-3, DALL-E, CLIP...) sont des modèles génératifs. Ils sont capables de générer des images, du texte, des sons, etc. à partir d'un corpus d'apprentissage.
+
+L'idée est d'imiter des créations humaines (texte, image, son, vidéo...) grâce à des corpus de données immenses (tout internet, en gros). 
+
+Par cette imitation, des capacités cognitives sont simulées (compréhension du langage, de l'image, etc.). Plus les données sont massives, plus l'imitation est bonne. 
+
+Mais ces modèles n'ont pas de notion de vérité ou de factualité, d'où les hallucinations que produisent ces modèles. 
+
+---
+
+## La force des modèles pré-entraînés 
+
+Durant la vague du "Big data" (années 2010), on avait coutume de dire que les outils de *machine learning* ne fonctionnaient bien qu'à condition d'avoir de **très grandes quantités de données**. Cela disqualifiait beaucoup d'acteurs, dont beaucoup d'acteurs publics, et consacrait la domination des grands acteurs du numérique. 
+
+Les modèles qui prévalent aujourd'hui sont dit **pré-entraînés** : ils ont été entraînés sur d'immenses corpus (tout internet, en gros) et peuvent être utiles sans entraînement spécifique sur les données de l'utilisateur (*zero shot*), avec très peu d'exemples (*few shots*) ou avec relativement peu de données (de préférence de qualité) (*fine tuning*). 
+
+Cela rebat donc les cartes : des usages peuvent être développés pour tous types d'acteurs. La qualité des données compte plus que la quantité. 
+
+La diffusion de modèles ouverts, tels que **LlaMa**, permet de développer des modèles personnalisés et des usages très variés. 
+
+---
+class: inverse, center, middle
+
+# AGI ou copilote ? 
+
+---
+
+## La science fiction...
+
+.center[.reduite[
+![](./img/superai.png)
+]]
+---
+
+## La réalité
+
+.center[.reduite[
+![](./img/copilot.png)
+]]
+
+---
+
+## La réalité
+
+.center[.reduite[
+![](./img/copilot2.png)
+]]
+
+---
+
+## La réalité
+
+.center[.reduite[
+![](./img/mscopilot.png)
+]]
+
+???
+
+Impact sur l'emploi : certainement, en augmentant la productivité de certains métiers et donc en les transformant. parallèle avec le tableur qui a transformé les métiers de la comptabilité et de la finance : moins de comptables, plus d'analystes. 
+
+---
+
+## Alignement et éthique de l'IA
+
+Plus de questions que de réponses !
+
+- "aligner" l'IA... oui mais aligner sur quoi ?
+- l'IA est-elle un outil ou un agent ? N'ayant pas d'intentionnalité ni d'agentivité, peut-il y avoir plus d'éthique de l'IA que d'éthique du pic à glace ou du tableur ? 
+- quel économie politique : quelle valeur extraite, auprès de qui, redistribuée comment ? Quelle distribution du pouvoir ? 
+
+---
+# Merci !
+
+Contact : [joel@datactivist.coop](mailto:joel@datactivist.coop)
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script src="matomo.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>\n"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
